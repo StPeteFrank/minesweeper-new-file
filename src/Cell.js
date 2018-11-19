@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import './App.css'
-class App extends Component {
+
+class Cell extends Component {
   render() {
-    return (
-    )
-    export default App
+    return <td>{this.props.value}</td>
+  }
+}
+
+export default Cell

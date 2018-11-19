@@ -1,14 +1,106 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: courier;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+button {
+  cursor: pointer;
+  margin: 0.5rem;
+  background-color: #999;
+}
+table {
+  border-collapse: collapse;
+}
+.header {
+  font-size: 0.8rem;
+}
+.lost {
+  color: #ddd;
+  background-color: #a00;
+}
+.won {
+  color: #ddd;
+  background-color: #0a0;
+}
+.cell-flag {
+  color: #a00;
+}
+.cell-bomb {
+  font-size: 0.6rem;
+}
+.cell-covered {
+  background-color: #aaa;
+}
+td {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+  background-color: #ccc;
+  border: 1px solid black;
+}
+
+/* My CSS Below this line.
+
+h1 {
+  color: rgb(167, 14, 14);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table,
+td {
+  border: 1px solid rgb(167, 14, 14);
+  border-collapse: collapse;
+}
+table {
+  border: 3px solid rgb(167, 14, 14);
+}
+td {
+  height: 3rem;
+  width: 3rem;
+  background-color: rgb(81, 140, 199);
+}
+.new-game {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 12rem;
+  height: 2rem;
+  margin: 3rem;
+  border: 2px solid rgb(167, 14, 14);
+  background-color: rgb(81, 140, 199);
+}
+p {
+  color: rgb(167, 14, 14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */

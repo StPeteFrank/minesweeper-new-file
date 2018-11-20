@@ -35,6 +35,7 @@ class App extends Component {
       })
     })
   }
+  //flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
   flagCell = (row, col) => {
     axios
       .post(
@@ -75,6 +76,13 @@ class App extends Component {
   // If else statement allowing for either number of game or Start New Game to display.
   headerText = () => {
     if (this.state.playing) {
+      if (this.state.game.state === 'won') {
+        return 'You live!'
+      }
+      if (this.state.game.state === 'lost') {
+        return 'You die!'
+      }
+
       return `Game #${this.state.game.id}`
     } else {
       return 'Start a new game!'

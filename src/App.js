@@ -82,7 +82,6 @@ class App extends Component {
       if (this.state.game.state === 'lost') {
         return 'You die!'
       }
-
       return `Game #${this.state.game.id}`
     } else {
       return 'Start a new game!'
@@ -95,6 +94,14 @@ class App extends Component {
     } else {
       return ''
       //Also hides number of mines left
+    }
+  }
+
+  buttonText = () => {
+    if (this.state.game.state === 'lost') {
+      return '😱'
+    } else {
+      return '😀'
     }
   }
 
@@ -111,7 +118,7 @@ class App extends Component {
                   <option value="1">Warrior</option>
                   <option value="2">Master</option>
                 </select>
-                <button onClick={this.newGame}>😄</button>
+                <button onClick={this.newGame}>{this.buttonText()}</button>
               </td>
             </tr>
             <tr>

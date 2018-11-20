@@ -45,6 +45,10 @@ class App extends Component {
   }
   //flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
   flagCell = (row, col) => {
+    //Return nothing if button start new isn't pushed. Will not return API.
+    if (!this.state.playing) {
+      return
+    }
     axios
       .post(
         `https://minesweeper-api.herokuapp.com/games/${
@@ -63,6 +67,10 @@ class App extends Component {
       })
   }
   checkCell = (row, col) => {
+    //Return nothing if button start new isn't pushed. Will not return API.
+    if (!this.state.playing) {
+      return
+    }
     axios
       .post(
         `https://minesweeper-api.herokuapp.com/games/${

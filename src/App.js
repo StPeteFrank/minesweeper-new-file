@@ -9,6 +9,8 @@ class App extends Component {
     // This is raw data from API. Had to put it on json file to compress it.
     this.state = {
       playing: false,
+      difficulty: 0,
+
       game: {
         id: 1,
         board: [
@@ -28,12 +30,18 @@ class App extends Component {
   }
   // This event will pull API data /games then respond with the setState of response data. Use the newGame API to request new game.
   newGame = event => {
-    axios.post('https://minesweeper-api.herokuapp.com/games').then(response => {
-      this.setState({
-        playing: true,
-        game: response.data
+    console.log(this.state.difficulty)
+
+    axios
+      .post('https://minesweeper-api.herokuapp.com/games', {
+        difficulty: this.state.difficulty
       })
-    })
+      .then(response => {
+        this.setState({
+          playing: true,
+          game: response.data
+        })
+      })
   }
   //flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
   flagCell = (row, col) => {
@@ -104,7 +112,11 @@ class App extends Component {
       return '😀'
     }
   }
-
+  chooseYourFate = event => {
+    this.setState({
+      difficulty: parseInt(event.target.value)
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -113,7 +125,10 @@ class App extends Component {
             <tr>
               {/* This is a selector inside the header. The restart button is also here. */}
               <td className="header" colSpan="8">
-                <select>
+                <select
+                  value={this.state.difficulty}
+                  onChange={this.chooseYourFate}
+                >
                   <option value="0">Novice</option>
                   <option value="1">Warrior</option>
                   <option value="2">Master</option>

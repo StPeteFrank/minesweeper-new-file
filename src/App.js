@@ -32,6 +32,7 @@ class App extends Component {
   newGame = event => {
     console.log(this.state.difficulty)
 
+    //This will call API only when the game is playing: true
     axios
       .post('https://minesweeper-api.herokuapp.com/games', {
         difficulty: this.state.difficulty
@@ -43,7 +44,7 @@ class App extends Component {
         })
       })
   }
-  //flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
+  //Flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
   flagCell = (row, col) => {
     //Return nothing if button start new isn't pushed. Will not return API.
     if (!this.state.playing) {
@@ -120,16 +121,21 @@ class App extends Component {
       return '😀'
     }
   }
+  //After adding difficulty to raw data state and
+  // newGame API setState.
   chooseYourFate = event => {
     this.setState({
       difficulty: parseInt(event.target.value)
     })
   }
+
+  //The .map function that allows all items in the array of rows and
+  //cells to change into what the API provides.
   boardRows = () => {
     return this.state.game.board.map((row, rowIndex) => {
       return (
         <tr key={rowIndex}>
-          {row.map((value, index) => {
+          {row.map((spaceValue, index) => {
             return (
               <Cell
                 key={index}
@@ -137,7 +143,7 @@ class App extends Component {
                 flagCell={this.flagCell}
                 row={rowIndex}
                 col={index}
-                value={value}
+                value={spaceValue}
               />
             )
           })}
@@ -145,17 +151,18 @@ class App extends Component {
       )
     })
   }
-
+  //This will return the headers at the length of the API provided board size.
   boardSize = () => {
     return this.state.game.board[0].length
   }
+  //This renders and displays or returns everything within the main component.
   render() {
     return (
       <div className="App">
         <table>
           <tbody>
             <tr>
-              {/* This is a selector inside the header. The restart button is also here. */}
+              {/* This is a difficulty selector inside the header. The restart button is also here. */}
               <td className="header" colSpan={this.boardSize()}>
                 <select
                   value={this.state.difficulty}
@@ -173,6 +180,7 @@ class App extends Component {
                 {this.headerText()}
               </td>
             </tr>
+            {/* Just displays all cells and data via .map function above */}
             {this.boardRows()}
             <tr>
               <td className="header" colSpan={this.boardSize()}>

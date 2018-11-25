@@ -51,61 +51,17 @@ table {
   font-size: 0.6rem;
 }
 .cell-covered {
-  background-color: #aaa;
+  background-color: rgb(81, 140, 199);
 }
 td {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   line-height: 20px;
   vertical-align: middle;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   border: 1px solid rgb(167, 14, 14);
   /* height: 3rem;
   width: 3rem; */
   background-color: rgb(81, 140, 199);
 }
-
-/* My original CSS Below this line.
-
-h1 {
-  color: rgb(167, 14, 14);
-}
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-table,
-td {
-  border: 1px solid rgb(167, 14, 14);
-  border-collapse: collapse;
-}
-table {
-  border: 3px solid rgb(167, 14, 14);
-}
-td {
-  height: 3rem;
-  width: 3rem;
-  background-color: rgb(81, 140, 199);
-}
-.new-game {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 12rem;
-  height: 2rem;
-  margin: 3rem;
-  border: 2px solid rgb(167, 14, 14);
-  background-color: rgb(81, 140, 199);
-}
-p {
-  color: rgb(167, 14, 14);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */

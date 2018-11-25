@@ -28,7 +28,7 @@ class Cell extends Component {
   }
 
   lookupValue = () => {
-    const Lookup = { '*': '🎇', F: '🚩', '@': '🚩', _: '_' }
+    const Lookup = { '*': '🐡', F: '🏖', '@': '🏖', _: '_' }
 
     let foundValue = Lookup[this.props.value] || this.props.value
     return foundValue

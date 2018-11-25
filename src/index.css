@@ -16,12 +16,17 @@ code {
 body {
   margin: 0;
   padding: 0;
-  font-family: courier;
+  font-family: 'Franklin Gothic Medium';
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  color: gold;
+  background-image: url(Underwater.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 button {
   cursor: pointer;
@@ -30,28 +35,18 @@ button {
 }
 table {
   border-collapse: collapse;
-  border: 2px solid rgb(167, 14, 14);
+  border: 2px solid gold;
 }
 .header {
   font-size: 0.8rem;
-  border: 2px solid rgb(167, 14, 14);
-}
-.lost {
-  color: #ddd;
-  background-color: #a00;
-}
-.won {
-  color: #ddd;
-  background-color: #0a0;
-}
-.cell-flag {
-  color: #a00;
+  border: 2px solid gold;
 }
 .cell-bomb {
-  font-size: 0.6rem;
+  font-size: 20px;
 }
 .cell-covered {
-  background-color: rgb(81, 140, 199);
+  /* background-color: rgb(81, 140, 199); */
+  background-color: transparent;
 }
 td {
   cursor: pointer;
@@ -60,8 +55,9 @@ td {
   line-height: 20px;
   vertical-align: middle;
   /* background-color: #ccc; */
-  border: 1px solid rgb(167, 14, 14);
+  border: 1px solid gold;
   /* height: 3rem;
   width: 3rem; */
-  background-color: rgb(81, 140, 199);
+  /* background-color: rgb(81, 140, 199); */
+  background-color: transparent;
 }

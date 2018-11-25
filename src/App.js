@@ -101,7 +101,7 @@ class App extends Component {
       }
       return `Game #${this.state.game.id}`
     } else {
-      return 'Start a new game!'
+      return 'Start New Game!'
     }
   }
   //Display the number of mines left

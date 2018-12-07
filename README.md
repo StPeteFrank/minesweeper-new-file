@@ -1,36 +1,23 @@
-Instructions Below
+# Minesweeper
 
-New Game
-When the user clicks the new game button
-Use the new game API to request a new game
-POST /games
-Take what the API gives back and put that in the state
-Display the number of the game we are playing
-Draw the board
+<p align="center">
+<img src="src/MinesweeperGIF.gif">
+</p>
 
-8x8 grid of and elements
-comes from the state, the API calls this board (Render based on the state)
-So for each element in the board, put the appropriate character in the table
-Update the number of mines remaining
-Check a cell
+## Description
 
-Tell the API that the user checked a cell
-We need to tell it:
-id (number of the game)
-row
-col
-POST /games/{id}/check
-Take what the API gives back and put that in the state
-Flag a cell
+This project was intended to show proficiency in HTML, CSS, JavaScript, React, and Axios technologies.
 
-Tell the API that the user flagged a cell
+https://StPeteFrank-Minesweeper.surge.sh
 
-We need to tell it:
-id (number of the game)
-row
-col
-POST /games/{id}/flag
-Take what the API gives back and put that in the state
-Handle a game over (display something to the user)
+- JavaScript. A scripting or programming language that allows you to implement complex things on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved.
 
-Handle easy/intermediate/expert
+https://www.javascript.com/
+
+- React. A declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
+
+https://reactjs.org/
+
+- Axios. A Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser that also supports the ES6 Promise API.
+
+https://www.npmjs.com/package/axios

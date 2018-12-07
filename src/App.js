@@ -94,10 +94,10 @@ class App extends Component {
   headerText = () => {
     if (this.state.playing) {
       if (this.state.game.state === 'won') {
-        return 'You live!'
+        return 'You Win!'
       }
       if (this.state.game.state === 'lost') {
-        return 'You die!'
+        return 'Fugu!'
       }
       return `Game #${this.state.game.id}`
     } else {

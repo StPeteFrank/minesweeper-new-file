@@ -45,7 +45,6 @@ table {
   font-size: 20px;
 }
 .cell-covered {
-  /* background-color: rgb(81, 140, 199); */
   background-color: transparent;
 }
 td {
@@ -54,10 +53,8 @@ td {
   height: 22px;
   line-height: 20px;
   vertical-align: middle;
-  /* background-color: #ccc; */
+
   border: 1px solid gold;
-  /* height: 3rem;
-  width: 3rem; */
-  /* background-color: rgb(81, 140, 199); */
+
   background-color: transparent;
 }

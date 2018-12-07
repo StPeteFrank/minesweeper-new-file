@@ -1,7 +1,7 @@
 # Minesweeper
 
 <p align="center">
-<img src="src/MinesweeperGIF.gif">
+<img src="src/MInesweeperGIF.gif">
 </p>
 
 ## Description

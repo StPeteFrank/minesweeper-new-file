@@ -6,7 +6,6 @@ import Cell from './Cell.js'
 class App extends Component {
   constructor(props) {
     super(props)
-    // This is raw data from API. Had to put it on json file to compress it.
     this.state = {
       playing: false,
       difficulty: 0,
@@ -28,11 +27,9 @@ class App extends Component {
       }
     }
   }
-  // This event will pull API data /games then respond with the setState of response data. Use the newGame API to request new game.
   newGame = event => {
     console.log(this.state.difficulty)
 
-    //This will call API only when the game is playing: true
     axios
       .post('https://minesweeper-api.herokuapp.com/games', {
         difficulty: this.state.difficulty
@@ -44,9 +41,7 @@ class App extends Component {
         })
       })
   }
-  //Flagging and checking cells pulling from API. Need id, row, and col. Row and Col are arguments.
   flagCell = (row, col) => {
-    //Return nothing if button start new isn't pushed. Will not return API.
     if (!this.state.playing) {
       return
     }
@@ -68,7 +63,6 @@ class App extends Component {
       })
   }
   checkCell = (row, col) => {
-    //Return nothing if button start new isn't pushed. Will not return API.
     if (!this.state.playing) {
       return
     }
@@ -89,8 +83,6 @@ class App extends Component {
         })
       })
   }
-
-  // If else statement allowing for either number of game or Start New Game to display.
   headerText = () => {
     if (this.state.playing) {
       if (this.state.game.state === 'won') {
@@ -104,16 +96,13 @@ class App extends Component {
       return 'Start New Game!!'
     }
   }
-  //Display the number of mines left
   minesText = () => {
     if (this.state.playing) {
       return `${this.state.game.mines} mines left`
     } else {
       return ''
-      //Also hides number of mines left
     }
   }
-
   buttonText = () => {
     if (this.state.game.state === 'lost') {
       return '😱'
@@ -121,16 +110,11 @@ class App extends Component {
       return '😀'
     }
   }
-  //After adding difficulty to raw data state and
-  // newGame API setState.
   chooseYourFate = event => {
     this.setState({
       difficulty: parseInt(event.target.value)
     })
   }
-
-  //The .map function that allows all items in the array of rows and
-  //cells to change into what the API provides.
   boardRows = () => {
     return this.state.game.board.map((row, rowIndex) => {
       return (
@@ -151,11 +135,9 @@ class App extends Component {
       )
     })
   }
-  //This will return the headers at the length of the API provided board size.
   boardSize = () => {
     return this.state.game.board[0].length
   }
-  //This renders and displays or returns everything within the main component.
   render() {
     return (
       <div className="App">
